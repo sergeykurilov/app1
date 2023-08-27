@@ -6,9 +6,9 @@
 		"node": "16.0.0"
 	},
 	"scripts": {
-		"start": "webpack serve",
+		"dev": "webpack serve",
 		"build": "webpack --mode production",
-		"serve": "serve dist -p 3001",
+		"start": "serve -s dist",
 		"clean": "rm -rf dist"
 	},
 	"dependencies": {
