@@ -9,7 +9,8 @@
 		"dev": "webpack serve",
 		"build": "webpack --mode production",
 		"start": "serve -s dist",
-		"clean": "rm -rf dist"
+		"clean": "rm -rf dist",
+		"heroku-postbuild": "npm run build"
 	},
 	"dependencies": {
 		"@types/node": "^15.0.3",
