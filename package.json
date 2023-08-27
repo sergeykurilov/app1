@@ -5,7 +5,13 @@
 	"engines": {
 		"node": "16.0.0"
 	},
-	"devDependencies": {
+	"scripts": {
+		"start": "webpack serve",
+		"build": "webpack --mode production",
+		"serve": "serve dist -p 3001",
+		"clean": "rm -rf dist"
+	},
+	"dependencies": {
 		"@types/node": "^15.0.3",
 		"@types/react": "^18.0.20",
 		"@types/react-dom": "^18.0.6",
@@ -15,15 +21,7 @@
 		"typescript": "^4.2.4",
 		"webpack": "^5.67.0",
 		"webpack-cli": "^4.9.2",
-		"webpack-dev-server": "^4.7.3"
-	},
-	"scripts": {
-		"start": "webpack serve",
-		"build": "webpack --mode production",
-		"serve": "serve dist -p 3001",
-		"clean": "rm -rf dist"
-	},
-	"dependencies": {
+		"webpack-dev-server": "^4.7.3",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-router-dom": "^6.4.2"
