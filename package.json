@@ -2,6 +2,9 @@
 	"name": "app1",
 	"version": "0.0.0",
 	"private": false,
+	"engines": {
+		"node": "16.0.0"
+	},
 	"devDependencies": {
 		"@types/node": "^15.0.3",
 		"@types/react": "^18.0.20",
