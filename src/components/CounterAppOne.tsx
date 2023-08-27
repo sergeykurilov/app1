@@ -4,7 +4,7 @@ const Counter = () => {
   const [count, setCount] = useState(0);
 
   return (
-    <div >
+    <div style={{ background: "red" }}>
       <div>
         Add by one each click <strong>APP-1</strong>
       </div>
