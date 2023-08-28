@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import "../index.scss";
 
 const Counter = () => {
   const [count, setCount] = useState(0);
 
   return (
-    <div style={{ background: "red" }}>
+    <div className="bg-red-500">
       <div>
         Add by one each click <strong>APP-1</strong>
       </div>
