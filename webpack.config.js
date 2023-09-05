@@ -1,5 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const {resolve} = require("path");
+const { resolve } = require("path");
 const { ModuleFederationPlugin } = require("webpack").container;
 const deps = require("./package.json").dependencies;
 
@@ -12,7 +12,8 @@ module.exports = {
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-      "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+      "Access-Control-Allow-Headers":
+        "X-Requested-With, content-type, Authorization",
     },
   },
   resolve: {
@@ -21,9 +22,14 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: ["@svgr/webpack", "url-loader"],
+      },
+      {
         test: /\.(css|scss)$/i,
-        include: resolve(__dirname, 'src'),
-        use: ['style-loader', 'css-loader', 'postcss-loader'],
+        include: resolve(__dirname, "src"),
+        use: ["style-loader", "css-loader", "postcss-loader"],
       },
       {
         test: /\.(js|jsx|tsx|ts)$/,
