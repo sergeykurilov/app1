@@ -9,6 +9,7 @@ module.exports = {
   devServer: {
     port: 3001,
     open: true,
+    watchFiles: ["src", "public"],
     headers: {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
