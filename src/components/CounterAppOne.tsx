@@ -7,16 +7,25 @@ const Counter = () => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    const handleEvent = (e: any) => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    const handleEvent = (e) => {
       if (e.detail.from === "APP2") {
         setCount(e.detail.count);
       }
     };
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    const handleBroadcast = (e) => {
+      alert(`Broadcast received in APP1: ${e.detail.message}`);
+    };
 
     window.addEventListener("counterChange", handleEvent);
+    window.addEventListener("broadcast", handleBroadcast);
 
     return () => {
       window.removeEventListener("counterChange", handleEvent);
+      window.removeEventListener("broadcast", handleBroadcast);
     };
   }, []);
 
@@ -28,7 +37,12 @@ const Counter = () => {
       detail: { from: "APP1", count: newCount },
     });
 
+    const broadcastEvent = new CustomEvent("broadcast", {
+      detail: { message: "Hello from APP1" },
+    });
+
     window.dispatchEvent(event);
+    window.dispatchEvent(broadcastEvent);
   };
   return (
     <div className="flex h-full items-center justify-center bg-[#f89494] text-center font-[bold] text-lg">
