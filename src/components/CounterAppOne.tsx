@@ -31,7 +31,7 @@ const Counter = () => {
     window.dispatchEvent(event);
   };
   return (
-    <div className="flex h-full items-center justify-center bg-[#f89494] text-center font-[bold] text-lg">
+    <div className="flex h-96 items-center justify-center bg-[#f89494] text-center font-[bold] text-lg">
       <div className="flex flex-col">
         <span>
           Add by one each click <strong>APP-1</strong>
